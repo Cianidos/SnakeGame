@@ -242,5 +242,11 @@ function update() {
     counter += 1
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-setInterval(update, 5)
+while (true) {
+    update()
+    await sleep(8 / snake.length)
+}
